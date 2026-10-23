@@ -107,6 +107,25 @@ def test_setup_cell_idempotent(tmp_path):
     assert list((content / "python-cevresel-modelleme").iterdir()) == []
 
 
+def test_setup_cell_local_finds_repo_root_from_bonus(tmp_path):
+    """Yerelde, kendi requirements.txt dosyası olan bir bonus klasöründen de repo köküne çıkmalı."""
+    root = tmp_path / "repo"
+    module = root / "bonus" / "ornek-modul"
+    module.mkdir(parents=True)
+    (root / "src").mkdir()
+    (root / "src" / "model.py").write_text("")
+    (root / "requirements.txt").write_text("")
+    (module / "requirements.txt").write_text("")
+    cwd, path = os.getcwd(), list(sys.path)
+    try:
+        os.chdir(module)
+        exec(strip_ipython(SETUP_CELL), {})
+        assert Path(os.getcwd()).resolve() == root.resolve()
+    finally:
+        os.chdir(cwd)
+        sys.path[:] = path
+
+
 def test_check_mode_detects_drift(tmp_path):
     (tmp_path / "cozumler").mkdir()
     (tmp_path / "notebooks").mkdir()
@@ -116,3 +135,11 @@ def test_check_mode_detects_drift(tmp_path):
     assert run("--check").returncode == 1
     assert run().returncode == 0
     assert run("--check").returncode == 0
+
+
+def test_first_cell_is_setup_cell():
+    solutions = sorted((ROOT / "cozumler").glob("*.ipynb")) + sorted((ROOT / "bonus").glob("*/cozum.ipynb"))
+    assert solutions
+    for path in solutions:
+        nb = nbformat.read(path, as_version=4)
+        assert nb.cells[0].source == SETUP_CELL, f"{path.name}: ilk hücre SETUP_CELL değil"

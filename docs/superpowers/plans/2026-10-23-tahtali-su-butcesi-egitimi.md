@@ -242,7 +242,7 @@ Run: `uv pip install -p .venv -r requirements-dev.txt && .venv/bin/pre-commit in
       %cd /content/python-cevresel-modelleme
       %pip install -q sweetviz
   else:
-      while not os.path.exists("requirements.txt") and os.getcwd() != "/":
+      while not os.path.exists("src/model.py") and os.getcwd() != "/":
           os.chdir("..")
   sys.path.insert(0, os.getcwd())
   ```

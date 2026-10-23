@@ -10,6 +10,6 @@ if "google.colab" in sys.modules:
     %cd /content/python-cevresel-modelleme
     %pip install -q sweetviz
 else:
-    while not os.path.exists("requirements.txt") and os.getcwd() != "/":
+    while not os.path.exists("src/model.py") and os.getcwd() != "/":
         os.chdir("..")
 sys.path.insert(0, os.getcwd())"""
