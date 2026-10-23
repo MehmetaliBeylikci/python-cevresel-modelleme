@@ -57,6 +57,11 @@ def test_student_has_no_solution():
     assert "# TODO: kendin yaz\n...\ndef f():" in code.source
 
 
+def test_student_ids_match_nbstripout():
+    student = make_student(sample_notebook())
+    assert [c.id for c in student.cells] == ["0", "1"]
+
+
 def test_student_is_valid_python():
     nb = sample_notebook()
     nb.cells.insert(1, new_code_cell(SETUP_CELL))

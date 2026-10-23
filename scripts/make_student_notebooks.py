@@ -51,6 +51,9 @@ def make_student(nb: nbformat.NotebookNode) -> nbformat.NotebookNode:
             cell.outputs = []
             cell.execution_count = None
         cells.append(cell)
+    # nbstripout hücre kimliklerini 0, 1, 2... diye numaralandırır; aynısını yapıyoruz ki --check bozulmasın.
+    for i, cell in enumerate(cells):
+        cell.id = str(i)
     student.cells = cells
     return student
 
