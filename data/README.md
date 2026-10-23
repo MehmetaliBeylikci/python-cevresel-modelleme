@@ -23,7 +23,17 @@ Tahtalı Barajı noktası için günlük meteoroloji verisi.
 
 ## `raw/tahtali_era5_daily_kirli.csv`
 
-*(Task 3'te eklenecek.)*
+> ⚠️ **Bu dosya eğitim için kasıtlı olarak bozulmuştur. Analizde kullanmayın.** Gün 1'de bu dosyayı temizlemeyi öğreniyoruz.
+
+`tahtali_era5_daily.csv` dosyasından `python scripts/make_dirty_copy.py` ile üretilir (seed = 42, her seferinde aynı dosya).
+
+| Bozma | Ayrıntı | Gün 1'de nasıl bulunur? |
+|---|---|---|
+| Karışık tarih biçimi | Satırların ~%10'unda tarih `GG.AA.YYYY` biçiminde | `pd.to_datetime` hata verir ya da `NaT` üretir |
+| Tekrarlanan satırlar | 20 satır birebir tekrar | `df.duplicated()` |
+| İmkânsız değerler | 3 negatif yağış, 2 adet 900 mm/gün | `describe()`, kutu grafiği |
+| Birim hatası | 2019 yılında yağış cm cinsinden yazılmış (10'a bölünmüş) | Yıllık toplam çubuk grafiğinde 2019 aykırı görünür |
+| Eksik günler | Günlerin ~%2'si silinmiş | Tam tarih aralığıyla karşılaştırma (`reindex`) |
 
 ## `raw/izsu_baraj_2026-10-14.csv`
 
