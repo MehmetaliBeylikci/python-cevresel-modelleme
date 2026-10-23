@@ -36,7 +36,7 @@ Bir değeri değiştirirseniz bu tabloyu da güncelleyin.
 
 ## Bilinen durum: model parametrelere çok hassas
 
-Temel parametrelerle model 2022–2025 kuraklığını **yakalamaz**; doluluk %70–80 bandında kalır.
+Temel parametrelerle model 2022–2025 kuraklığını **yakalamaz**; doluluk %70–80 bandında kalır. (Aşağıdaki değerler temiz ERA5 verisiyle hesaplandı; Gün 1 çıktısıyla birkaç puan farklı olabilir.)
 Küçük değişiklikler ise tabloyu tamamen değiştirir:
 
 | `runoff_coef` | `withdrawal` (hm³/ay) | 2022-08 / 2023-08 / 2025-07 / 2026-09 (%) |
