@@ -19,11 +19,11 @@ Tahtalı Barajı noktası için günlük meteoroloji verisi.
 - **İndirme tarihi:** 2026-10-23
 - **Yeniden indirmek için:** `python scripts/download_era5.py`
 
-> ⚠️ ERA5 yaklaşık 25 km çözünürlüklü bir reanaliz ürünüdür. Bu nedenle tek bir noktanın değeri, havzanın tamamındaki yağışı yalnızca yaklaşık olarak temsil eder. Modelin varsayımları arasında bunu da tartışıyoruz.
+> ERA5 yaklaşık 25 km çözünürlüklü bir reanaliz ürünüdür. Bu nedenle tek bir noktanın değeri, havzanın tamamındaki yağışı yalnızca yaklaşık olarak temsil eder. Modelin varsayımları arasında bunu da tartışıyoruz.
 
 ## `raw/tahtali_era5_daily_kirli.csv`
 
-> ⚠️ **Bu dosya eğitim için kasıtlı olarak bozulmuştur. Analizde kullanmayın.** Gün 1'de bu dosyayı temizlemeyi öğreniyoruz.
+> **Bu dosya eğitim için kasıtlı olarak bozulmuştur. Analizde kullanmayın.** Gün 1'de bu dosyayı temizlemeyi öğreniyoruz.
 
 `tahtali_era5_daily.csv` dosyasından `python scripts/make_dirty_copy.py` ile üretilir (seed = 42, her seferinde aynı dosya).
 

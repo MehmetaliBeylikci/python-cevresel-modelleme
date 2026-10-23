@@ -1,7 +1,7 @@
 # Tasarım: Python ile Çevresel Modelleme — Tahtalı Barajı Su Bütçesi
 
 - **Tarih:** 2026-10-23
-- **Hazırlayan:** @mehmetalibeylikci (İYTE Çevre Topluluğu), Claude ile birlikte
+- **Hazırlayan:** @mehmetalibeylikci (İYTE Çevre Topluluğu)
 - **Durum:** İncelemede
 - **Repo:** `github.com/mehmetalibeylikci/python-cevresel-modelleme` (açık kaynak)
 
@@ -18,7 +18,7 @@
 
 **Başarı ölçütleri**
 1. Eğitimi tamamlayan bir katılımcı, kendi zaman serisi verisiyle benzer bir kütle dengesi modelini tek başına kurabilir: veriyi okur, temizler, toplulaştırır, modeli yazar, senaryoları karşılaştırıp grafiğe döker.
-2. Hiç kod yazmamış bir katılımcı, Gün 0'ı tamamladıktan sonra her günün temel (🟢) alıştırmalarını bitirebilir.
+2. Hiç kod yazmamış bir katılımcı, Gün 0'ı tamamladıktan sonra her günün temel alıştırmalarını bitirebilir.
 3. Tüm notebook'lar Colab'da tek tıkla açılır ve "Run all" ile hatasız çalışır. Bu, CI tarafından her push'ta doğrulanır.
 4. Dışarıdan biri, yalnızca `CONTRIBUTING.md` dosyasını okuyarak yeni bir alıştırma ya da bonus modül ekleyebilir.
 
@@ -62,7 +62,7 @@ Birim dönüşümü: 1 mm × 1 km² = 0,001 hm³. Bu dönüşüm Gün 2'de açı
 
 **Bilinçli olarak dışarıda bırakılanlar:** günlük zaman adımı, kar ve yeraltı suyu, birden fazla baraj, kalibrasyon/optimizasyon.
 
-Depolamaya bağlı göl alanı (`A_göl = f(S)`) Gün 2'de 🔵 ileri seviye bir alıştırma olarak yer alıyor; temel model sabit alanla çalışıyor.
+Depolamaya bağlı göl alanı (`A_göl = f(S)`) Gün 2'de ileri seviye bir alıştırma olarak yer alıyor; temel model sabit alanla çalışıyor.
 
 ### 2.2 Veri
 
@@ -86,7 +86,7 @@ Ham veriler repoya dahil ediliyor. Böylece ders günü internet ya da API eriş
 ## 3. Ders akışı
 
 **Ortak yapı:** Her gün için tek bir notebook var. Akış şöyle: kısa anlatım → birlikte canlı kodlama → alıştırmalar.
-- Alıştırmalar 🟢 temel ve 🔵 ileri olarak işaretleniyor.
+- Alıştırmalar (temel) ve (ileri) olarak işaretleniyor.
 - Her notebook'ta bir **"Zaman kalırsa"** bölümü var; atlandığında akış bozulmuyor.
 - Her gün, bir önceki günün çıktısını (`data/processed/` ve `src/model.py`) kullanarak başlıyor. Böylece bir günü kaçıran katılımcı da devam edebiliyor.
 

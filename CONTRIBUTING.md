@@ -64,7 +64,7 @@ CI, katılımcı notebook'larının güncel olmadığını görürse PR'ı kırm
 
 - **İlk kod hücresi** her zaman `scripts/setup_cell.py` içindeki `SETUP_CELL` metnidir (Colab'da repoyu indirir).
 - **Dil:** anlatım ve yorumlar Türkçe; değişken ve fonksiyon isimleri İngilizce (`storage`, `runoff_coef`).
-- **Alıştırmalar:** `### 🟢 Alıştırma N` (temel) veya `### 🔵 Alıştırma N` (ileri) başlığıyla.
+- **Alıştırmalar:** `### Alıştırma N (temel)` veya `### Alıştırma N (ileri)` başlığıyla.
 - **Grafikler:** Türkçe başlık ve eksen etiketleri; eksende birim yazın (`Depolama (hm³)`).
 - **Kaynak:** Yeni bir sayı ya da parametre kullanıyorsanız kaynağını `docs/parametreler.md` dosyasına yazın. Kaynaksız parametre kabul edilmez.
 - **Süre:** Ders notebook'ları 2 saate sığmalı. Fazlası "## Zaman kalırsa" bölümüne gider.
@@ -86,4 +86,4 @@ CI, katılımcı notebook'larının güncel olmadığını görürse PR'ı kırm
 - [ ] Değiştirdiğiniz notebook "Run all" ile baştan sona hatasız çalışıyor
 - [ ] Yeni veri/parametre kaynakları belgelendi
 
-Teşekkürler! 🌊
+Teşekkürler!

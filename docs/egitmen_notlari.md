@@ -71,7 +71,7 @@ Katılımcının kendi başına yaptığı bir bölüm. Gün 1'in ilk 5 dakikas�
 - *Isı haritasındaki köşegen ne anlatıyor?* Yüksek C ile yüksek W birbirini dengeliyor. Gözlemler ikisini ayrı ayrı belirlemeye yetmiyor (eşsonuçluluk).
 - *Neden en iyi RMSE'yi seçip "kalibre ettik" demiyoruz?* 4 gözlem, 2 parametre, farklı kaynaklar. Uyum, açıklama gücü anlamına gelmez.
 
-**Zaman yetmezse:** RMSE alıştırmasını (🔵 Alıştırma 3) atlayın; ipywidgets bölümünü eğitmen olarak siz gösterin.
+**Zaman yetmezse:** RMSE alıştırmasını (Alıştırma 3, ileri) atlayın; ipywidgets bölümünü eğitmen olarak siz gösterin.
 
 ## Gün 3 — Görselleştirme ve senaryolar
 
@@ -90,7 +90,7 @@ Katılımcının kendi başına yaptığı bir bölüm. Gün 1'in ilk 5 dakikas�
 **Tartışma soruları**
 
 - *Hangi değişiklik en tehlikeli?* Temel parametrelerle yağıştaki %20'lik düşüş (22 ay kritik altı) talepteki %15'lik artıştan (6 ay) ve ET0'daki %10'luk artıştan (0 ay, en düşük doluluk ~%34) daha etkili. Hepsi birlikte olduğunda baraj 39 ay kritik seviyenin altında kalıyor.
-- *Sıralama parametrelere bağlı mı?* 🔵 Alıştırma 5'te C = 0,20, W = 8 ile denendiğinde mutlak sayılar çok değişiyor, ama sıralama (kurak > yüksek talep > sıcak) aynı kalıyor. Model belirsiz olsa bile göreli sonuçlar daha sağlam.
+- *Sıralama parametrelere bağlı mı?* Alıştırma 5'te (ileri seviye) C = 0,20, W = 8 ile denendiğinde mutlak sayılar çok değişiyor, ama sıralama (kurak > yüksek talep > sıcak) aynı kalıyor. Model belirsiz olsa bile göreli sonuçlar daha sağlam.
 
 **Zaman yetmezse:** plotly bölümünü atlayın; ısı haritasında yalnızca kurak senaryoyu gösterin.
 

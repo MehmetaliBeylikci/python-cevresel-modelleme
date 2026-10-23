@@ -273,7 +273,7 @@ Run: `uv pip install -p .venv -r requirements-dev.txt && .venv/bin/pre-commit in
 
 - Yalnızca çözüm notebook'u elle yazılır. Ardından `make_student_notebooks.py` çalıştırılır ve iki dosya birlikte commit'lenir.
 - İlk kod hücresi `SETUP_CELL`'dir. İkinci hücre bir başlık, öğrenme hedefleri ve süre tablosudur (spec Bölüm 3'teki tablo aynen kullanılır).
-- Alıştırma başlıkları `### 🟢 Alıştırma N` ve `### 🔵 Alıştırma N` formatındadır. Her alıştırmanın altında bir çözüm hücresi vardır; çözüm `# BEGIN SOLUTION` bloğunun içindedir.
+- Alıştırma başlıkları `### Alıştırma N (temel)` ve `### Alıştırma N (ileri)` formatındadır. Her alıştırmanın altında bir çözüm hücresi vardır; çözüm `# BEGIN SOLUTION` bloğunun içindedir.
 - Canlı kodlama sırasında katılımcının dolduracağı satırlar da `# BEGIN SOLUTION` bloğu içindedir.
 - Her notebook'ta "## Zaman kalırsa" başlıklı bölüm bulunur; atlanması sonraki hücreleri bozmamalıdır.
 - Grafiklerin başlık ve eksen etiketleri Türkçedir; eksen etiketlerinde birim yazılır.
@@ -330,7 +330,7 @@ Run: `uv pip install -p .venv -r requirements-dev.txt && .venv/bin/pre-commit in
     - Tarama: `runoff_coef ∈ {0.10, 0.15, …, 0.40}` × `withdrawal ∈ {8, 10.7, 13, 17.1}` hm³/ay. Buradaki 17,1 değeri, yıllık 205 hm³'e karşılık gelir.
     - Sonuç: 2026-09 ay sonu aktif doluluğu, pivot tablo ve ısı haritası olarak gösterilir.
   - ipywidgets bölümü: `interact` ile `runoff_coef` ve `withdrawal` için kaydırma çubukları ve anlık güncellenen depolama grafiği.
-  - 🔵 ileri alıştırma: depolamaya bağlı göl alanı, `A_göl = lake_km2 · (S / s_max)^(2/3)`.
+  - İleri alıştırma: depolamaya bağlı göl alanı, `A_göl = lake_km2 · (S / s_max)^(2/3)`.
 - [ ] **Step 2: Doğrula** (ortak kurallardaki 1–2). `interact` hücresi nbconvert altında hata vermemeli; widget görüntülenemese de yürütme devam etmeli. → PASS
 - [ ] **Step 3: Commit** — `git commit -m "content: Gün 2 model kurulumu"`
 

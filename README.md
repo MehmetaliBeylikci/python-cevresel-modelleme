@@ -12,7 +12,7 @@
 
 ## Kimler için?
 
-Başlangıç seviyesinin biraz üzerindeki katılımcılar için tasarlandı. Hiç kod yazmamış olanlar **Gün 0**'ı tamamlayarak katılabilir. Alıştırmalar iki seviyeli: 🟢 temel, 🔵 ileri.
+Başlangıç seviyesinin biraz üzerindeki katılımcılar için tasarlandı. Hiç kod yazmamış olanlar **Gün 0**'ı tamamlayarak katılabilir. Alıştırmalar iki seviyeli: temel ve ileri.
 
 Kurulum gerekmez: her şey tarayıcıda, **Google Colab**'da çalışır.
 
