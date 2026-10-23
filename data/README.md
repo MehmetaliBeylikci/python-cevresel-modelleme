@@ -64,4 +64,17 @@ Bu kayıtta `ENLEM` ve `BOYLAM` sütunları boştur. Lisansı kaynak dosyayla ay
 
 ## `processed/tahtali_monthly.csv`
 
-*(Gün 1 notebook'unun çıktısı; Task 7'de eklenecek.)*
+Gün 1 notebook'unun çıktısı: temizlenmiş **aylık** yağış ve ET0 toplamları. Gün 1'i atlayan ya da tamamlayamayan katılımcılar Gün 2'ye bu dosyayla başlayabilir.
+
+| Sütun | Birim | Açıklama |
+|---|---|---|
+| `month` | — | Ay, `YYYY-MM` |
+| `precipitation_mm` | mm/ay | Aylık toplam yağış |
+| `et0_mm` | mm/ay | Aylık toplam ET0 |
+
+- **Kapsam:** 2014-01 → 2026-09 (153 ay)
+- Kirli kopyanın temizlenmesiyle üretildiği için orijinal veriden biraz farklıdır: toplam yağış farkı %0,9; tek bir ayda en fazla ~29 mm.
+
+## `raw/tahtali_gozlemler.csv`
+
+Modelin makullük kontrolü için kullanılan, kaynaklı Tahtalı doluluk gözlemleri. Sütunlar: `date`, `active_fill_pct` (%), `storage_hm3` (varsa), `source`. Ayrıntılar: [docs/parametreler.md](../docs/parametreler.md).
