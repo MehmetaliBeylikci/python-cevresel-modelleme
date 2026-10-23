@@ -1,0 +1,41 @@
+name: Hata bildir
+description: Bir notebook, script ya da belgede çalışmayan veya yanlış olan bir şey
+title: "[Hata] "
+labels: ["hata"]
+body:
+  - type: dropdown
+    id: notebook
+    attributes:
+      label: Hangi dosya?
+      options:
+        - 00_on_hazirlik
+        - 01_veri_hazirlama
+        - 02_model_kurulumu
+        - 03_gorsellestirme_senaryolar
+        - Bonus — Fizik mi, veri mi?
+        - src/model.py
+        - Diğer (açıklamada belirtin)
+    validations:
+      required: true
+  - type: dropdown
+    id: ortam
+    attributes:
+      label: Nerede çalıştırdınız?
+      options:
+        - Google Colab
+        - Yerel (Jupyter / VS Code)
+    validations:
+      required: true
+  - type: textarea
+    id: aciklama
+    attributes:
+      label: Ne oldu?
+      description: Hangi hücrede ne yaptınız, ne bekliyordunuz, ne oldu?
+    validations:
+      required: true
+  - type: textarea
+    id: hata
+    attributes:
+      label: Hata mesajı
+      description: Varsa hata mesajının tamamını yapıştırın.
+      render: text

@@ -1,0 +1,10 @@
+# Ana ders (Gün 0–3) için gerekli paketler.
+# Colab'da bunların çoğu hazır gelir; yerel kurulum için: pip install -r requirements.txt
+pandas>=2.0
+numpy>=1.26
+matplotlib>=3.8
+seaborn>=0.13
+plotly>=5.18
+ipywidgets>=8.0
+folium>=0.15
+sweetviz>=2.3

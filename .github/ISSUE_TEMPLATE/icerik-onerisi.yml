@@ -1,0 +1,34 @@
+name: İçerik öner
+description: Yeni bir alıştırma, açıklama, bonus modül ya da case study önerisi
+title: "[Öneri] "
+labels: ["öneri"]
+body:
+  - type: dropdown
+    id: tur
+    attributes:
+      label: Öneri türü
+      options:
+        - Yeni alıştırma
+        - Mevcut anlatımın iyileştirilmesi
+        - Yeni bonus modül
+        - Yeni veri kaynağı / case study
+        - Diğer
+    validations:
+      required: true
+  - type: textarea
+    id: oneri
+    attributes:
+      label: Öneriniz
+      description: Ne eklensin ya da değişsin? Hangi güne / notebook'a?
+    validations:
+      required: true
+  - type: textarea
+    id: neden
+    attributes:
+      label: Neden faydalı olur?
+  - type: checkboxes
+    id: katki
+    attributes:
+      label: Katkı
+      options:
+        - label: Bunu kendim PR olarak hazırlamak isterim
