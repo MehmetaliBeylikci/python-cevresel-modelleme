@@ -76,7 +76,7 @@ CI, katılımcı notebook'larının güncel olmadığını görürse PR'ı kırm
    - `README.md`: amaç, ön koşullar, tahmini süre
    - `requirements.txt`: yalnızca bu modülün ek paketleri
    - `cozum.ipynb`: çözümlü notebook
-3. Katılımcı sürümü için `scripts/make_student_notebooks.py` içindeki eşlemeye modülünüzü ekleyin.
+3. `python scripts/make_student_notebooks.py` çalıştırın. Script modülünüzü otomatik bulur ve katılımcı sürümünü `bonus/<modul-adi>/<modul_adi>.ipynb` adıyla üretir (tireler alt çizgiye çevrilir).
 4. Ana `README.md` dosyasındaki bonus listesine bir satır ekleyin.
 
 ## Pull request kontrol listesi
