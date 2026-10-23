@@ -89,3 +89,21 @@ def test_s0_matches_observation():
     assert S0_DATE == "2019-09"
     assert first["date"] == pd.Timestamp("2019-08-17")
     assert active_fill_pct(S0_HM3) == pytest.approx(first["active_fill_pct"], abs=0.01)
+
+
+def test_runoff_coef_matches_annual_potential():
+    """C, havzadan + göle düşen yağışla gelen yıllık suyun 153 hm³ potansiyele eşit olacağı şekilde türetilir."""
+    clean = pd.read_csv(ROOT / "data" / "raw" / "tahtali_era5_daily.csv", parse_dates=["date"])
+    full_years = clean[clean["date"].dt.year <= 2025]
+    mean_annual_precip = full_years.groupby(full_years["date"].dt.year)["precipitation_mm"].sum().mean()
+    annual_inflow = (P.runoff_coef * P.catchment_km2 + P.lake_km2) * mean_annual_precip * 0.001
+    assert annual_inflow == pytest.approx(153, rel=0.02)
+
+
+def test_rejects_invalid_s0_and_negative_inputs():
+    with pytest.raises(ValueError, match="s0"):
+        simulate(series(0), series(0), s0=5.0)
+    with pytest.raises(ValueError, match="s0"):
+        simulate(series(0), series(0), s0=P.s_max + 1)
+    with pytest.raises(ValueError, match="negatif"):
+        simulate(series(-1), series(0), s0=100.0)

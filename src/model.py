@@ -28,7 +28,7 @@ class Params:
     lake_km2: float = 23.52        # normal kottaki göl alanı
     s_max: float = 306.65          # hm³, normal kottaki göl hacmi
     s_min: float = 19.6            # hm³, ölü hacim
-    runoff_coef: float = 0.33      # akış katsayısı C
+    runoff_coef: float = 0.29      # akış katsayısı C
     evap_coef: float = 1.05        # açık su katsayısı k_E (FAO-56)
     withdrawal: float = 10.7       # hm³/ay, İZSU'nun çektiği su
 
@@ -52,8 +52,12 @@ def simulate(precip_mm: pd.Series, et0_mm: pd.Series, s0: float,
         raise ValueError("Yağış ve ET0 serilerinin indeksleri aynı olmalı (aynı aylar, aynı sıra).")
     if precip_mm.isna().any() or et0_mm.isna().any():
         raise ValueError("Girdilerde eksik (NaN) değer var; önce veriyi temizleyin.")
+    if (precip_mm < 0).any() or (et0_mm < 0).any():
+        raise ValueError("Yağış ve ET0 negatif olamaz; önce veriyi temizleyin.")
 
     p = params
+    if not p.s_min <= s0 <= p.s_max:
+        raise ValueError(f"s0 = {s0} hm³, ölü hacim ({p.s_min}) ile en büyük hacim ({p.s_max}) arasında olmalı.")
     rows = []
     storage = s0
     for precip, et0 in zip(precip_mm, et0_mm):

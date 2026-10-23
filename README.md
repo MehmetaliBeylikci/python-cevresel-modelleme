@@ -41,7 +41,7 @@ $$S_{t+1} = S_t + C \cdot P \cdot A_{havza} + P \cdot A_{göl} - k_E \cdot ET_0 
 
 Depolama, ölü hacim (19,6 hm³) ile normal kottaki hacim (306,65 hm³) arasında sınırlı. Kodu [`src/model.py`](src/model.py), parametreler ve kaynakları [`docs/parametreler.md`](docs/parametreler.md) dosyasında.
 
-> **Eğitimin önemli bir dersi:** Kaynaklardan alınan parametrelerle model, 2022–2025 kuraklığını yakalayamıyor ve sonuç parametrelere son derece hassas. Gün 2 bu durumu bir duyarlılık analiziyle inceliyor; Gün 3 ise modeli mutlak tahmin için değil, senaryoları karşılaştırmak için kullanıyor.
+> **Eğitimin önemli bir dersi:** Kaynaklardan alınan parametrelerle model, 2022–2025 kuraklığının derinliğini yakalayamıyor ve sonuç parametrelere son derece hassas. Gün 2 bu durumu bir duyarlılık analiziyle inceliyor; Gün 3 ise modeli mutlak tahmin için değil, senaryoları karşılaştırmak için kullanıyor.
 
 ## Yerel kurulum
 

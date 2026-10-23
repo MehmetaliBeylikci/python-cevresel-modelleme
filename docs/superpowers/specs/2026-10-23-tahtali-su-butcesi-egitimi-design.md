@@ -48,7 +48,7 @@ Birim dönüşümü: 1 mm × 1 km² = 0,001 hm³. Bu dönüşüm Gün 2'de açı
 | `A_havza` | Yağış havzası alanı | 546 km² | İkincil kaynak; uygulamada birincil kaynakla (DSİ/İZSU) teyit edilir |
 | `A_göl` | Normal kottaki göl alanı | 23,52 km² | İkincil kaynak; uygulamada teyit edilir |
 | `W` | Aylık su çekimi | Temel değer 10,7 hm³/ay (yıllık 128 hm³) | Kaynaklarda yıllık 128–205 hm³ arasında çelişkili değerler var. Bu belirsizlik duyarlılık analizinin girdisi olur |
-| `C` | Akış katsayısı | Temel değer 0,33 | DSİ'nin yıllık potansiyelinden (153 hm³) ve ERA5 ortalama yağışından türetildi; ayrıntı `docs/parametreler.md` |
+| `C` | Akış katsayısı | Temel değer 0,29 | Modelin yıllık ortalama girişi (havza akışı + göle düşen yağış) yıllık potansiyele (153 hm³) eşit olacak şekilde ERA5 ortalama yağışından türetildi; ayrıntı `docs/parametreler.md` |
 | `k_E` | Açık su buharlaşma katsayısı (ET0 → göl) | 1,05 | FAO-56 Tablo 12 (açık su, yarı nemli iklim) |
 | `S[0]` | Başlangıç depolaması | 237,76 hm³ (ağustos 2019 sonu, %76) | TRT Haber / İZSU verisi; 2014–2015 için kaynaklı değer bulunamadığından simülasyon 2019-09'da başlar |
 

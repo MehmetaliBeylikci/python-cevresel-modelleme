@@ -9,9 +9,9 @@ Bir değeri değiştirirseniz bu tabloyu da güncelleyin.
 | Ölü hacim | `s_min` | 19,6 | hm³ | Aynı dosya, `MINIMUM_SU_KAPASITESI` | Birincil (İZSU) |
 | Yağış havzası alanı | `catchment_km2` | 546 | km² | [Yeni Bakış: Tahtalı Barajı hakkında bilinmesi gerekenler](https://www.yenibakishaber.com/izmirde-tahtali-baraji-hakkinda-bilinmesi-gerekenler) (erişim 2026-10-23) | İkincil; DSİ belgesiyle teyit edilemedi |
 | Normal kottaki göl alanı | `lake_km2` | 23,52 | km² | Aynı kaynak | İkincil; DSİ belgesiyle teyit edilemedi |
-| Su çekimi | `withdrawal` | 10,7 | hm³/ay | Aynı kaynak: "çekilebilecek yıllık ortalama su miktarı 128 milyon m³" → 128 / 12 | İkincil. Bu bir **tasarım değeri**; gerçek çekim farklı olabilir. Başka kaynaklarda yıllık 205 hm³ de geçiyor. |
-| Akış katsayısı | `runoff_coef` | 0,33 | — | **Türetilmiş:** yıllık ortalama potansiyel 153 hm³ (aynı kaynak) ÷ (ERA5 2014–2025 ortalama yağışı 836 mm × 546 km² × 0,001 = 456,6 hm³) = 0,335 | Türetilmiş. DSİ'nin uzun dönem ortalaması ile ERA5'in 2014–2025 dönemi karşılaştırıldığı için kaba bir tahmin. |
-| Açık su buharlaşma katsayısı | `evap_coef` | 1,05 | — | [FAO-56, Tablo 12](https://www.fao.org/4/x0490e/x0490e0b.htm): "Open Water, < 2 m depth or in subhumid climates or tropics", Kc = 1,05 | Birincil |
+| Su çekimi | `withdrawal` | 10,7 | hm³/ay | Aynı kaynak: "çekilebilecek yıllık ortalama su miktarı 128 milyon m³" → 128 / 12 | İkincil. Bu bir **tasarım değeri**; gerçek çekim farklı olabilir. Aynı haber sitesinde yıllık 205 hm³ de geçiyor; bu değer yalnızca duyarlılık analizinde üst sınır olarak kullanılır. |
+| Akış katsayısı | `runoff_coef` | 0,29 | — | **Türetilmiş:** modelin yıllık ortalama girişi, kaynaktaki yıllık ortalama potansiyele (153 hm³) eşit olacak şekilde: C = (153 − P̄·A_göl) / (P̄·A_havza), P̄ = ERA5 2014–2025 ortalama yağışı 836 mm → C = (153 − 19,7) / 456,6 = 0,29 | Türetilmiş. DSİ'nin uzun dönem ortalaması ile ERA5'in 2014–2025 dönemi karşılaştırıldığı için kaba bir tahmin. |
+| Açık su buharlaşma katsayısı | `evap_coef` | 1,05 | — | [FAO-56, Tablo 12](https://www.fao.org/4/x0490e/x0490e0b.htm): "Open Water, < 2 m depth or in subhumid climates or tropics", Kc = 1,05 | Birincil kaynak, ama kaba bir seçim: Tahtalı derin bir rezervuar. FAO-56, derin sular için mevsime göre değişen değerler (0,65–1,25) veriyor ve dikkatli kullanılmasını öneriyor. |
 
 ## Başlangıç koşulu
 
@@ -36,14 +36,15 @@ Bir değeri değiştirirseniz bu tabloyu da güncelleyin.
 
 ## Bilinen durum: model parametrelere çok hassas
 
-Temel parametrelerle model 2022–2025 kuraklığını **yakalamaz**; doluluk %70–80 bandında kalır. (Aşağıdaki değerler temiz ERA5 verisiyle hesaplandı; Gün 1 çıktısıyla birkaç puan farklı olabilir.)
+Temel parametrelerle model 2022–2025 kuraklığının **derinliğini yakalamaz**; doluluk hiç %37'nin altına inmez. (Aşağıdaki değerler temiz ERA5 verisiyle hesaplandı; Gün 1 çıktısıyla birkaç puan farklı olabilir.)
 Küçük değişiklikler ise tabloyu tamamen değiştirir:
 
 | `runoff_coef` | `withdrawal` (hm³/ay) | 2022-08 / 2023-08 / 2025-07 / 2026-09 (%) |
 |---|---|---|
-| 0,33 | 10,7 | 70 / 75 / 81 / 79 |
-| 0,33 | 13 | 42 / 37 / 26 / 31 |
+| 0,29 | 10,7 | 53 / 51 / 46 / 53 |
+| 0,29 | 13 | 24 / 12 / 0 / 6 |
 | 0,25 | 10,7 | 35 / 26 / 9 / 7 |
+| 0,20 | 8 | 46 / 41 / 29 / 29 |
 | Gözlem | | 50 / 35 / 7,45 / 42,75 |
 
 Bu durum bir hata değil, Gün 2'nin ana dersidir: belirsiz parametrelerle kurulan bir modelin sonucu, o parametrelerin belirsizliğinden bağımsız okunamaz.

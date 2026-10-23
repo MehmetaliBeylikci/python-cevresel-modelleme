@@ -26,7 +26,7 @@
 - Sabitler (spec 2.1):
   - `S_max = 306.65` hm³, `S_min = 19.6` hm³
   - `A_havza = 546` km², `A_göl = 23.52` km²
-  - `C = 0.33`, `k_E = 1.05` (C, Task 4'te kaynaktan türetildi)
+  - `C = 0.29`, `k_E = 1.05` (C, Task 4'te kaynaktan türetildi; final review'da göle düşen yağış hesaba katılarak 0.33'ten düzeltildi)
   - `W = 10.7` hm³/ay
 - Birim dönüşümü: 1 mm × 1 km² = 0,001 hm³.
 - Doluluk oranı her yerde **aktif doluluk** olarak hesaplanır: `(S − S_min) / (S_max − S_min) × 100`. Kontrol: İZSU CSV'sinde 142,323 hm³ → %42,75.
@@ -174,7 +174,7 @@ Run: `uv pip install -p .venv -r requirements-dev.txt && .venv/bin/pre-commit in
       lake_km2: float = 23.52
       s_max: float = 306.65   # hm³
       s_min: float = 19.6     # hm³
-      runoff_coef: float = 0.33
+      runoff_coef: float = 0.29
       evap_coef: float = 1.05
       withdrawal: float = 10.7  # hm³/ay
 

@@ -54,7 +54,7 @@ Katılımcının kendi başına yaptığı bir bölüm. Gün 1'in ilk 5 dakikas�
 |---|---|---|
 | 0–15 | Kova çizimi, kütle korunumu | Tahtaya çizmek, ekrandaki ASCII çizimden daha etkili |
 | 15–50 | `my_simulate` | Birlikte, satır satır yazın. `assert` hücresinin yeşil olması güzel bir an |
-| 50–70 | Gözlemlerle karşılaştırma | **Günün en önemli anı:** model kuraklığı yakalayamıyor |
+| 50–70 | Gözlemlerle karşılaştırma | **Günün en önemli anı:** model kuraklığın derinliğini yakalayamıyor (hiç %40'ın altına inmiyor; gerçekte %7,45) |
 | 70–100 | Duyarlılık, ipywidgets | Kaydırma çubuklarıyla oynamaları için 5 dakika verin |
 | 100–120 | Tartışma | Varsayımlar listesini birlikte tamamlayın |
 
@@ -62,13 +62,12 @@ Katılımcının kendi başına yaptığı bir bölüm. Gün 1'in ilk 5 dakikas�
 
 **Sık karşılaşılan hatalar**
 
-- `my_simulate` içinde `spill` tanımsız hatası: `spill = 0.0` satırı `if` bloğunun **önüne** yazılmalı.
 - `assert np.allclose` başarısız: en sık sebep birim dönüşümünün (`* MM_KM2_TO_HM3`) unutulması ya da göle düşen yağışın eklenmemesi.
 - ipywidgets çubukları görünmüyor: Colab'da hücreyi yeniden çalıştırın. Yerel Jupyter'de `ipywidgets` kurulu olmalı.
 
 **Tartışma soruları**
 
-- *Neden havzadan gelen su, göle düşenden 8 kat fazla?* Havza alanı (546 km²) göl alanının (23,5 km²) ~23 katı; akış katsayısı 0,33 olunca 23 × 0,33 ≈ 7,7.
+- *Neden havzadan gelen su, göle düşenden 7 kat fazla?* Havza alanı (546 km²) göl alanının (23,5 km²) ~23 katı; akış katsayısı 0,29 olunca 23 × 0,29 ≈ 6,7.
 - *Isı haritasındaki köşegen ne anlatıyor?* Yüksek C ile yüksek W birbirini dengeliyor. Gözlemler ikisini ayrı ayrı belirlemeye yetmiyor (eşsonuçluluk).
 - *Neden en iyi RMSE'yi seçip "kalibre ettik" demiyoruz?* 4 gözlem, 2 parametre, farklı kaynaklar. Uyum, açıklama gücü anlamına gelmez.
 
@@ -90,7 +89,7 @@ Katılımcının kendi başına yaptığı bir bölüm. Gün 1'in ilk 5 dakikas�
 
 **Tartışma soruları**
 
-- *Hangi değişiklik en tehlikeli?* Temel parametrelerle yağıştaki %20'lik düşüş, talepteki %15'lik artıştan ve ET0'daki %10'luk artıştan daha etkili. Hepsi birlikte olduğunda baraj defalarca kritik seviyenin altına iniyor.
+- *Hangi değişiklik en tehlikeli?* Temel parametrelerle yağıştaki %20'lik düşüş (22 ay kritik altı) talepteki %15'lik artıştan (6 ay) ve ET0'daki %10'luk artıştan (0 ay, en düşük doluluk ~%34) daha etkili. Hepsi birlikte olduğunda baraj 39 ay kritik seviyenin altında kalıyor.
 - *Sıralama parametrelere bağlı mı?* 🔵 Alıştırma 5'te C = 0,20, W = 8 ile denendiğinde mutlak sayılar çok değişiyor, ama sıralama (kurak > yüksek talep > sıcak) aynı kalıyor. Model belirsiz olsa bile göreli sonuçlar daha sağlam.
 
 **Zaman yetmezse:** plotly bölümünü atlayın; ısı haritasında yalnızca kurak senaryoyu gösterin.
