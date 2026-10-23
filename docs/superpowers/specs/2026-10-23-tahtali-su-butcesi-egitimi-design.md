@@ -57,7 +57,7 @@ Birim dönüşümü: 1 mm × 1 km² = 0,001 hm³. Bu dönüşüm Gün 2'de açı
 - Tabloda "teyit edilir" denen değerler uygulamanın ilk adımında kontrol edilir. Değer değişirse yalnızca `docs/parametreler.md` ve `src/model.py` güncellenir.
 
 **Kalibrasyon yapılmıyor.** Tahtalı'nın geçmiş doluluk serisi açık bir kaynakta bulunmuyor. Kontrol edilenler: İzmir açık veri CSV'si yalnızca anlık durumu veriyor; Internet Archive'da bu dosyanın tek bir kaydı var. Kalibrasyonun yerini iki şey alıyor:
-1. **Makullük kontrolü:** model, iki gerçek gözlemle karşılaştırılır. Bunlar Wayback Machine'deki 2 Eylül 2025 kaydı ve 14 Ekim 2026 tarihli güncel CSV (%42,75).
+1. **Makullük kontrolü:** model, iki gerçek gözlemle karşılaştırılır. Bunlar Wayback Machine'deki kayıt (2 Eylül 2025'te arşivlenmiş, durum tarihi 11 Ağustos 2025: 40,98 hm³, %7,45) ve 14 Ekim 2026 tarihli güncel CSV (142,32 hm³, %42,75).
 2. **Duyarlılık analizi:** `C` ve `W` için parametre taraması yapılır.
 
 **Bilinçli olarak dışarıda bırakılanlar:** günlük zaman adımı, kar ve yeraltı suyu, birden fazla baraj, kalibrasyon/optimizasyon.
@@ -71,7 +71,7 @@ Depolamaya bağlı göl alanı (`A_göl = f(S)`) Gün 2'de 🔵 ileri seviye bir
 | `data/raw/tahtali_era5_daily.csv` | 2014-01-01 → 2026-09-30 arası günlük `precipitation_sum` (mm) ve `et0_fao_evapotranspiration` (mm) | Open-Meteo Archive API (ERA5), CC BY 4.0. Koordinat: baraj (38.157434, 27.122630, İzmir Açık Veri CSV'sinden) |
 | `data/raw/tahtali_era5_daily_kirli.csv` | Yukarıdaki dosyanın **eğitim için kasıtlı olarak bozulmuş** kopyası | `scripts/make_dirty_copy.py` ile, sabit seed kullanılarak üretiliyor |
 | `data/raw/izsu_baraj_2026-10-14.csv` | İzmir barajlarının anlık durumu (sabitler + kontrol noktası) | İzmir Açık Veri Portalı, İBB Açık Veri Lisansı |
-| `data/raw/izsu_baraj_2025-09-02_wayback.csv` | Aynı dosyanın Internet Archive kaydı (kontrol noktası) | web.archive.org kaydı, kaynak lisansı aynı |
+| `data/raw/izsu_baraj_2025-08-11_wayback.csv` | Aynı dosyanın Internet Archive kaydı (kontrol noktası) | web.archive.org kaydı, kaynak lisansı aynı |
 | `data/processed/tahtali_monthly.csv` | Gün 1'in beklenen çıktısı (Gün 2 için yedek) | Türetilmiş veri |
 
 **Kirli kopyada yapılan bozmalar** (hepsi `data/README.md` dosyasında belgeleniyor):

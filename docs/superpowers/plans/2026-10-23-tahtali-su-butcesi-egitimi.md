@@ -93,7 +93,7 @@ Run: `uv pip install -p .venv -r requirements-dev.txt && .venv/bin/pre-commit in
 
 **Files:**
 - Create: `scripts/download_era5.py`, `data/raw/tahtali_era5_daily.csv`
-- Create: `data/raw/izsu_baraj_2026-10-14.csv`, `data/raw/izsu_baraj_2025-09-02_wayback.csv`
+- Create: `data/raw/izsu_baraj_2026-10-14.csv`, `data/raw/izsu_baraj_2025-08-11_wayback.csv`
 - Create: `data/README.md`
 - Test: `tests/test_raw_data.py`
 
@@ -323,7 +323,7 @@ Run: `uv pip install -p .venv -r requirements-dev.txt && .venv/bin/pre-commit in
   - Katılımcı modeli notebook içinde `my_simulate` adıyla kendisi yazar.
   - Ardından bir hücre `assert np.allclose(my_simulate(...)["storage"], simulate(...)["storage"])` ile kendi fonksiyonunu `src.model.simulate` ile karşılaştırır.
   - Makullük kontrolü:
-    - 2025-09 ay sonu model değeri, Wayback kaydıyla karşılaştırılır.
+    - 2025-07 ay sonu model değeri, Wayback kaydındaki 2025-08-11 durumuyla (40,98 hm³, %7,45) karşılaştırılır.
     - 2026-09 ay sonu model değeri, 2026-10-14 kaydıyla karşılaştırılır; iki hafta fark olduğu belirtilir.
     - Fark tablo olarak gösterilir.
   - Duyarlılık analizi:
