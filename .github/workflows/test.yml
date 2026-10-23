@@ -1,0 +1,32 @@
+name: Testler
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Bağımlılıkları kur
+        run: pip install -r requirements-dev.txt
+
+      - name: Birim testleri
+        run: pytest -q
+
+      - name: Katılımcı notebook'ları güncel mi?
+        run: python scripts/make_student_notebooks.py --check
+
+      - name: Çözüm notebook'larını baştan sona çalıştır
+        run: |
+          jupyter nbconvert --to notebook --execute \
+            --ExecutePreprocessor.timeout=600 \
+            --output-dir /tmp/out \
+            cozumler/*.ipynb bonus/*/cozum.ipynb
