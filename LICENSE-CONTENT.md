@@ -9,7 +9,7 @@ Tek koşul, uygun **atıf** yapmanız ve değişiklik yaptıysanız bunu belirtm
 Önerilen atıf:
 
 > İYTE Çevre Topluluğu, *Python ile Çevresel Modelleme: Tahtalı Barajı Su Bütçesi*,
-> https://github.com/mehmetalibeylikci/python-cevresel-modelleme (CC BY 4.0)
+> https://github.com/MehmetaliBeylikci/python-cevresel-modelleme (CC BY 4.0)
 
 **Kod** (`src/`, `scripts/`, `tests/` ve notebook'lardaki kod hücreleri) [MIT lisansı](LICENSE) ile lisanslıdır.
 

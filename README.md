@@ -1,12 +1,12 @@
 # Python ile Çevresel Modelleme: Tahtalı Barajı Su Bütçesi
 
-[![Testler](https://github.com/mehmetalibeylikci/python-cevresel-modelleme/actions/workflows/test.yml/badge.svg)](https://github.com/mehmetalibeylikci/python-cevresel-modelleme/actions/workflows/test.yml)
+[![Testler](https://github.com/MehmetaliBeylikci/python-cevresel-modelleme/actions/workflows/test.yml/badge.svg)](https://github.com/MehmetaliBeylikci/python-cevresel-modelleme/actions/workflows/test.yml)
 [![Kod: MIT](https://img.shields.io/badge/kod-MIT-blue.svg)](LICENSE)
 [![İçerik: CC BY 4.0](https://img.shields.io/badge/i%C3%A7erik-CC%20BY%204.0-lightgrey.svg)](LICENSE-CONTENT.md)
 
 İYTE Çevre Topluluğu için hazırlanmış, **3 günlük, açık kaynak** bir Python eğitimi.
 
-İzmir'in en büyük içme suyu kaynağı **Tahtalı Barajı** 2025 yazında neredeyse tamamen boşaldı ve 2026'da yeniden doldu. Bu eğitimde barajın aylık su bütçesini modelleyerek çevresel modellemenin üç temel adımını uyguluyoruz:
+İzmir'in yüzey su kaynakları arasında kapasitesi en büyük baraj olan **Tahtalı Barajı** 2025 yazında neredeyse tamamen boşaldı ve 2026'da yeniden doldu. Bu eğitimde barajın aylık su bütçesini modelleyerek çevresel modellemenin üç temel adımını uyguluyoruz:
 
 **veri hazırlama → model kurulumu → görselleştirme ve senaryolar**
 
@@ -48,7 +48,7 @@ Depolama, ölü hacim (19,6 hm³) ile normal kottaki hacim (306,65 hm³) arasın
 Colab yerine kendi bilgisayarınızda çalışmak isterseniz (Python 3.12 önerilir):
 
 ```bash
-git clone https://github.com/mehmetalibeylikci/python-cevresel-modelleme
+git clone https://github.com/MehmetaliBeylikci/python-cevresel-modelleme
 cd python-cevresel-modelleme
 python -m venv .venv
 source .venv/bin/activate          # Windows: .venv\Scripts\activate
@@ -84,6 +84,10 @@ Hata bildirimi, yeni alıştırma ya da yeni bir bonus modül: her katkı değer
 - **Doluluk gözlemleri ve parametreler:** kaynakların tamamı [`docs/parametreler.md`](docs/parametreler.md) dosyasında
 
 Ayrıntılar: [`data/README.md`](data/README.md).
+
+## Destek olun
+
+Bu eğitim gönüllü olarak hazırlandı ve ücretsiz. Faydalı bulduysanız [GitHub Sponsors](https://github.com/sponsors/MehmetaliBeylikci) üzerinden destek olabilir, repoya yıldız verebilir ya da kendi topluluğunuzda kullanabilirsiniz.
 
 ## Lisans ve atıf
 

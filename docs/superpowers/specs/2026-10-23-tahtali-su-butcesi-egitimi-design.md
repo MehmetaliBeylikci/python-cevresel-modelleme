@@ -3,7 +3,7 @@
 - **Tarih:** 2026-10-23
 - **Hazırlayan:** @mehmetalibeylikci (İYTE Çevre Topluluğu)
 - **Durum:** İncelemede
-- **Repo:** `github.com/mehmetalibeylikci/python-cevresel-modelleme` (açık kaynak)
+- **Repo:** `github.com/MehmetaliBeylikci/python-cevresel-modelleme` (açık kaynak)
 
 ## 1. Amaç ve başarı ölçütleri
 
@@ -24,7 +24,7 @@
 
 ## 2. Case study: Tahtalı Barajı su bütçesi
 
-**Neden bu konu:** Tahtalı, İzmir'in en büyük içme suyu kaynağı. 2025'te neredeyse tamamen boşaldı, 2026'da toparlandı. Yerel, güncel ve çevre topluluğu için motive edici bir konu.
+**Neden bu konu:** Tahtalı, İzmir'in yüzey su kaynakları arasında kapasitesi en büyük baraj. 2025'te neredeyse tamamen boşaldı, 2026'da toparlandı. Yerel, güncel ve çevre topluluğu için motive edici bir konu.
 
 ### 2.1 Model
 

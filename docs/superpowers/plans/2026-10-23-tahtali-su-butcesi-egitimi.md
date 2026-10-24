@@ -19,7 +19,7 @@
 
 ## Global Constraints
 
-- Repo adresi: `https://github.com/mehmetalibeylikci/python-cevresel-modelleme`. Bu adres yalnızca `README.md`, `CITATION.cff` ve Colab kurulum hücresinde geçer (hücre metni Task 5'te tanımlanıyor).
+- Repo adresi: `https://github.com/MehmetaliBeylikci/python-cevresel-modelleme`. Bu adres yalnızca `README.md`, `CITATION.cff` ve Colab kurulum hücresinde geçer (hücre metni Task 5'te tanımlanıyor).
 - Dil: anlatım ve yorumlar Türkçe; değişken ve fonksiyon isimleri İngilizce.
 - Lisans: kod MIT, içerik CC BY 4.0. Veri dosyaları kendi kaynak lisanslarıyla kullanılır ve `data/README.md` dosyasında atıf yapılır.
 - Kaynaksız parametre kullanılmaz. Her sabit, kaynağıyla birlikte `docs/parametreler.md` dosyasına yazılır.
@@ -235,7 +235,7 @@ Run: `uv pip install -p .venv -r requirements-dev.txt && .venv/bin/pre-commit in
   ```python
   # Kurulum: Colab'da repoyu indirir, yerelde hiçbir şey yapmaz.
   import os, sys
-  REPO = "https://github.com/mehmetalibeylikci/python-cevresel-modelleme"
+  REPO = "https://github.com/MehmetaliBeylikci/python-cevresel-modelleme"
   if "google.colab" in sys.modules:
       if not os.path.exists("/content/python-cevresel-modelleme"):
           !git clone -q {REPO} /content/python-cevresel-modelleme

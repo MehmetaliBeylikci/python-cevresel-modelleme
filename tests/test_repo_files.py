@@ -3,7 +3,7 @@ from pathlib import Path
 import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
-REPO_URL = "https://github.com/mehmetalibeylikci/python-cevresel-modelleme"
+REPO_URL = "https://github.com/MehmetaliBeylikci/python-cevresel-modelleme"
 
 REQUIRED_FILES = [
     ".gitignore",
@@ -43,3 +43,9 @@ def test_citation_fields():
     cff = yaml.safe_load((ROOT / "CITATION.cff").read_text(encoding="utf-8"))
     assert cff["cff-version"] == "1.2.0"
     assert cff["repository-code"] == REPO_URL
+
+
+def test_funding_points_to_github_sponsors():
+    funding = yaml.safe_load((ROOT / ".github" / "FUNDING.yml").read_text(encoding="utf-8"))
+    assert funding == {"github": ["MehmetaliBeylikci"]}
+    assert "github.com/sponsors/MehmetaliBeylikci" in (ROOT / "README.md").read_text(encoding="utf-8")

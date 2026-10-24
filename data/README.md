@@ -44,7 +44,7 @@ Tahtalı Barajı noktası için günlük meteoroloji verisi.
 
 - **Kaynak:** [İzmir Büyükşehir Belediyesi Açık Veri Portalı — Barajların Güncel Doluluk Oranları](https://acikveri.bizizmir.com/dataset/barajlarin-doluluk-oranlari) (veri sahibi: İZSU)
 - **Doğrudan dosya:** `https://openfiles.izmir.bel.tr/309436/docs/izsu-baraj-doluluk-oranlari.csv`
-- **Lisans:** İzmir Büyükşehir Belediyesi Açık Veri Lisansı
+- **Lisans:** [İzmir Büyükşehir Belediyesi Açık Veri Lisansı](https://acikveri.bizizmir.com/en/license). Veri, kaynak belirtilerek kopyalanabilir, değiştirilebilir ve ticari amaçla da dağıtılabilir. Bu repo veriyi bu koşulla yeniden dağıtır.
 - **Biçim:** `;` ile ayrılmış, UTF-8 (BOM'lu). Okumak için: `pd.read_csv(path, sep=";", encoding="utf-8-sig")`
 
 Önemli sütunlar: `SU_DURUMU` (göldeki su, m³), `DOLULUK_ORANI` (aktif doluluk, %), `MAKSIMUM_SU_KAPASITESI` / `MINIMUM_SU_KAPASITESI` (m³), `ENLEM` / `BOYLAM`.

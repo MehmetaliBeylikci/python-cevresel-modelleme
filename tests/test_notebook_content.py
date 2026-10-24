@@ -40,3 +40,19 @@ def test_day2_prose_does_not_claim_70_80_band():
 
 def test_local_install_includes_jupyter():
     assert "jupyterlab" in (ROOT / "requirements.txt").read_text()
+
+
+def test_day1_shows_sweetviz_inline_in_colab():
+    source = next(s for s in code_of("cozumler/01_veri_hazirlama.ipynb") if "sweetviz.analyze" in s)
+    lines = [line.strip() for line in source.splitlines()]
+    assert any(line.startswith("report.show_notebook()") for line in lines), "Colab'da rapor notebook içinde gösterilmeli (yorum satırı olmamalı)"
+    assert 'if "google.colab" in sys.modules:' in lines
+
+
+def test_claims_are_sourced():
+    for path in ["cozumler/00_on_hazirlik.ipynb", "cozumler/01_veri_hazirlama.ipynb", "README.md"]:
+        text = (ROOT / path).read_text(encoding="utf-8")
+        assert "en büyük içme suyu kaynağı" not in text, path
+    day3 = text_of("cozumler/03_gorsellestirme_senaryolar.ipynb")
+    assert "IPCC" in day3
+    assert "acikveri.bizizmir.com/en/license" in (ROOT / "data" / "README.md").read_text(encoding="utf-8")

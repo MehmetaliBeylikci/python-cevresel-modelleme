@@ -4,7 +4,7 @@ title: "Python ile Çevresel Modelleme: Tahtalı Barajı Su Bütçesi"
 type: software
 authors:
   - name: "İYTE Çevre Topluluğu"
-repository-code: "https://github.com/mehmetalibeylikci/python-cevresel-modelleme"
+repository-code: "https://github.com/MehmetaliBeylikci/python-cevresel-modelleme"
 license: MIT
 keywords:
   - python

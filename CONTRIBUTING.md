@@ -14,7 +14,7 @@ Katkıda bulunan herkesin [Davranış Kuralları](CODE_OF_CONDUCT.md)'na uyması
 Python 3.12 kullanıyoruz (Colab ve CI ile aynı sürüm).
 
 ```bash
-git clone https://github.com/mehmetalibeylikci/python-cevresel-modelleme
+git clone https://github.com/MehmetaliBeylikci/python-cevresel-modelleme
 cd python-cevresel-modelleme
 uv venv -p 3.12 .venv            # veya: python3.12 -m venv .venv
 uv pip install -p .venv -r requirements-dev.txt
